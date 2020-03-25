@@ -4,8 +4,13 @@
 
 **dcli** is cli for Docker.
 
+![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli.gif)
 
+To use:
 
+```npm
+npm i @enesusta/dcli -g
+```
 
 
 

@@ -1,0 +1,31 @@
+{
+  "name": "@enesusta/dcli",
+  "version": "1.0.0",
+  "description": "CLI for Docker",
+  "main": "index.js",
+  "bin": {
+    "dcli": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enesusta/dcli.git"
+  },
+  "keywords": [
+    "docker",
+    "cli"
+  ],
+  "author": "Enes Usta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enesusta/dcli/issues"
+  },
+  "homepage": "https://github.com/enesusta/dcli#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^5.0.0",
+    "inquirer": "^7.1.0"
+  }
+}

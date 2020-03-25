@@ -1,8 +1,9 @@
 const exec = require('child_process').exec;
 const colors = require('colors');
+const { isOdd, isEven } = require('../utils/mathUtils');
 
 module.exports = function () {
-    exec(`docker volume ls`, (err, stdout, stderr) => {
+    exec('docker volume ls', (err, stdout, stderr) => {
         if (!err) {
             const lines = stdout.split('\n');
             console.log(colors.yellow(lines[0]));

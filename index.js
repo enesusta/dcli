@@ -4,7 +4,7 @@ const program = require('commander');
 const inquirer = require('inquirer');
 const containerExec = require('./src/execs/containerExec');
 const imageExec = require('./src/execs/imageExec');
-const volumeExec = require('./src/execs/imageExec');
+const volumeExec = require('./src/execs/volumeExec');
 
 program
     .version('1.0.0')
@@ -37,6 +37,7 @@ program
                     imageExec();
                 } else if (type === 'volume') {
                     volumeExec();
+                    console.log('volume');
                 }
 
             });

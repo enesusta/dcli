@@ -4,9 +4,10 @@ const lsCommand = require('./src/commands/lsCommand');
 const stopCommand = require('./src/commands/stopCommand');
 const startCommand = require('./src/commands/startCommand');
 const backupCommand = require('./src/commands/dumpCommand');
+const removeCommand = require('./src/commands/removeCommand');
 
 program
-    .version('1.0.0')
+    .version('1.0.3')
     .description('CLI for Docker');
 
 program
@@ -25,6 +26,15 @@ program
     .command('start')
     .action(() => {
         startCommand();
+    });
+
+program
+    .command('rm')
+    .option('-v, --volume', 'Remove container with its volume')
+    .option('-f, --force', 'Remove running container with force')
+    .action((obj) => {
+        const { volume, force } = obj;
+        removeCommand(volume, force);
     });
 
 program

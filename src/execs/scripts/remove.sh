@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker rm $1

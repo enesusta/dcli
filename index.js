@@ -5,6 +5,7 @@ const stopCommand = require('./src/commands/stopCommand');
 const startCommand = require('./src/commands/startCommand');
 const backupCommand = require('./src/commands/dumpCommand');
 const removeCommand = require('./src/commands/removeCommand');
+const inspectCommand = require('./src/commands/inspectCommand');
 
 program
     .version('1.0.3')
@@ -43,6 +44,15 @@ program
     .action((obj) => {
         const { volume, force } = obj;
         removeCommand(volume, force);
+    });
+
+program
+    .command('inspect')
+    .option('-j, --json', 'Creates json file of output of inspect log')
+    .option('-i, --ipaddress', 'Finds IPv4 address of container')
+    .action((obj) => {
+        const { json, ipaddress } = obj;
+        inspectCommand(ipaddress, json);
     });
 
 program

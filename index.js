@@ -3,7 +3,7 @@ const program = require('commander');
 const lsCommand = require('./src/commands/lsCommand');
 const stopCommand = require('./src/commands/stopCommand');
 const startCommand = require('./src/commands/startCommand');
-const backupCommand = require('./src/commands/backupCommand');
+const backupCommand = require('./src/commands/dumpCommand');
 
 program
     .version('1.0.0')
@@ -28,11 +28,12 @@ program
     });
 
 program
-    .command('backup')
+    .command('dump')
     .option('-p, --postgre', 'Dump Postgre Database')
-    .action((cmdObj) => {
-        const { p } = cmdObj;
-        console.log(p);
+    .option('-m, --mysql', 'Dump Mysql Database')
+    .action((obj) => {
+        const { postgre, mysql } = obj;
+        backupCommand(postgre, mysql);
     });
 
 program.parse(process.argv);

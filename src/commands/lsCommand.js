@@ -11,13 +11,21 @@ const map = {
     volume: volumeExec
 };
 
-function lsCommamnd() {
-    inquirer
-        .prompt([viewPrompt])
-        .then(res => {
-            const { type } = res;
-            map[type.toString()]();
-        });
+function lsCommamnd(isContainer, isImage, isVolume) {
+    if (isContainer) {
+        containerExec();
+    } else if (isImage) {
+        imageExec();
+    } else if (isVolume) {
+        volumeExec();
+    } else {
+        inquirer
+            .prompt([viewPrompt])
+            .then(res => {
+                const { type } = res;
+                map[type.toString()]();
+            });
+    }
 }
 
 module.exports = lsCommamnd;

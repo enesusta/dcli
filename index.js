@@ -12,26 +12,34 @@ program
 
 program
     .command('ls')
-    .action(() => {
-        lsCommand();
+    .option('-c, --container', 'List Containers')
+    .option('-i, --image', 'List Images')
+    .option('-v, --volume', 'List Volumes')
+    .action((obj) => {
+        const { container, image, volume } = obj;
+        lsCommand(container, image, volume);
     });
 
 program
     .command('stop')
-    .action(() => {
-        stopCommand();
+    .option('-a, --all', 'Stops Containers')
+    .action((obj) => {
+        const { all } = obj;
+        stopCommand(all);
     });
 
 program
     .command('start')
-    .action(() => {
-        startCommand();
+    .option('-a, --all', 'Starts Containers')
+    .action((obj) => {
+        const { all } = obj;
+        startCommand(all);
     });
 
 program
     .command('rm')
-    .option('-v, --volume', 'Remove container with its volume')
-    .option('-f, --force', 'Remove running container with force')
+    .option('-v, --volume', 'Remove anonymous volumes associated with the container')
+    .option('-f, --force', 'Force the removal of a running container (uses SIGKILL)')
     .action((obj) => {
         const { volume, force } = obj;
         removeCommand(volume, force);

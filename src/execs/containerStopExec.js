@@ -5,9 +5,7 @@ const path = require('path');
 
 const sh = path.resolve(__dirname, 'scripts/stop.sh');
 
-module.exports = function(container) {
-  const argv = util.format('docker stop %s', container);
-  console.log(sh);
+module.exports = function (container) {
 
   exec(`sh ${sh} ${container}`, (err, stdout, stderr) => {
     if (!err) {

@@ -8,7 +8,7 @@ const removeCommand = require('./src/commands/removeCommand');
 const inspectCommand = require('./src/commands/inspectCommand');
 
 program
-    .version('1.0.3')
+    .version('1.0.6')
     .description('CLI for Docker');
 
 program

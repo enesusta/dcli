@@ -20,4 +20,12 @@ program
         stopCommand();
     });
 
+program
+    .command('test')
+    .action(() => {
+        const test = 'test';
+        for (let i = 0; i < test.length - 1; i++)
+            console.log(test.charAt(i));
+    });
+
 program.parse(process.argv);

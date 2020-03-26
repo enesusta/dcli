@@ -7,7 +7,7 @@ function stopCommand() {
         .prompt([listContainerNamesPrompt])
         .then(res => {
             const { type } = res;
-            containerStopExec(type.toString());
+            containerStopExec(type);
         });
 }
 

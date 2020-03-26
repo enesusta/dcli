@@ -1,4 +1,4 @@
-const containerNames = require('../lists/containerNamesList');
+const containerNames = require('../lists/inactiveContainerNamesList');
 const execSync = require('child_process').execSync;
 const names = execSync(`docker ps --format '{{.Names}}'`).toString();
 

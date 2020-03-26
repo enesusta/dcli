@@ -1,6 +1,6 @@
 const execSync = require('child_process').execSync;
 
-const names = execSync(`docker ps -a --format '{{.Names}}'`).toString();
+const names = execSync(`docker ps -a --format '{{.Names}}'`).toString().trim();
 const messageContainer = 'Which container will you backup';
 const messageUser = 'What is its user name of that container/database?';
 

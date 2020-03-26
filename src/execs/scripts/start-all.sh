@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker start $(docker ps --filter "status=exited")
+docker start $(docker container ls -aq -f "status=exited")

@@ -3,6 +3,7 @@
 const program = require('commander');
 const lsCommand = require('./src/commands/lsCommand');
 const stopCommand = require('./src/commands/stopCommand');
+const startCommand = require('./src/commands/startCommand');
 
 program
     .version('1.0.0')
@@ -21,11 +22,9 @@ program
     });
 
 program
-    .command('test')
+    .command('start')
     .action(() => {
-        const test = 'test';
-        for (let i = 0; i < test.length - 1; i++)
-            console.log(test.charAt(i));
+        startCommand();
     });
 
 program.parse(process.argv);

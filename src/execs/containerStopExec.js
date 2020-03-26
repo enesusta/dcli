@@ -11,7 +11,7 @@ module.exports = function (container) {
 
     exec(`sh ${sh} ${container}`, (err, stdout, stderr) => {
         if (!err) {
-            console.log('Container %s is successfully stopped', colors.cyan(container));
+            console.log('Container %s is successfully stopped!', colors.cyan(container));
         } else {
             console.log(colors.red(err));
         }

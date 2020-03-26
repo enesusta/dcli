@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
-const listContainerNamesPrompt = require('../prompts/listContainerNamesPrompt');
+const listInactiveContainerNamesPrompt = require('../prompts/listActiveContainerNamesPrompt');
 const containerStopExec = require('../execs/containerStopExec');
 
 function stopCommand() {
     inquirer
-        .prompt([listContainerNamesPrompt])
+        .prompt([listInactiveContainerNamesPrompt])
         .then(res => {
             const { type } = res;
             containerStopExec(type);

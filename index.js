@@ -46,9 +46,10 @@ program
 
 program
   .command('rmi')
-  .option('-f, --force')
+  .option('-f, --force', 'Removes image that has associated with the container')
   .action(obj => {
     const { force } = obj;
+    console.log(force);
     removeImageCommand(force);
   });
 

@@ -1,10 +1,16 @@
 
 ## dcli
+
+<div align="center">
+
 [![Build Status](https://travis-ci.com/enesusta/dcli.svg?branch=master)](https://travis-ci.com/enesusta/dcli)
 ![npm](https://img.shields.io/npm/v/@enesusta/dcli?color=green)
 [![install size](https://packagephobia.now.sh/badge?p=@enesusta/dcli)](https://packagephobia.now.sh/result?p=@enesusta/dcli)
+[![HitCount](http://hits.dwyl.com/enesusta/dcli.svg)](http://hits.dwyl.com/enesusta/dcli)
 
 **dcli** is cli for Docker.
+
+</div>
 
 <p align="center">
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--J3E8KS70--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn-images-1.medium.com/max/1024/1%2AE33brkN6zivLSb-D9i-CdQ.png" width=300 height=300>
@@ -14,10 +20,6 @@
 - [dcli](#dcli)
   - [Installation](#installation)
   - [Commands](#commands)
-    - [ls](#ls)
-      - [ls containers](#ls-containers)
-      - [ls images](#ls-images)
-      - [ls volumes](#ls-volumes)
     - [start](#start)
       - [start all](#start-all)
     - [stop](#stop)
@@ -44,59 +46,7 @@ Otherwise it may not work.
 
 ### Commands
 
-#### ls
-
-```bash
-dcli ls
-```
-
-![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-ls-1.gif)
-
-**ls** command has three options.
-
-##### ls containers
-
-Lists only **containers.**
-
-```bash
-dcli ls -c
-```
-
-or 
-
-```bash
-dcli ls --container
-```
-
-##### ls images
-
-Lists only **images.**
-
-```bash
-dcli ls -i
-```
-
-or
-
-```bash
-dcli ls --image
-```
-
-##### ls volumes
-
-Lists only **volumes.**
-
-```bash
-dcli ls -v
-```
-
-or
-
-```bash
-dcli ls --volume
-```
-
-![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-ls-3.gif)
+![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli.gif)
 
 #### start
 

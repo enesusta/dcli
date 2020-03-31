@@ -20,12 +20,18 @@
 - [dcli](#dcli)
   - [Installation](#installation)
   - [Commands](#commands)
+    - [default](#default)
+      - [-c](#c)
+      - [-i](#i)
+      - [-v](#v)
     - [start](#start)
       - [start all](#start-all)
     - [stop](#stop)
       - [stop all](#stop-all)
     - [rm](#rm)
       - [rm force](#rm-force)
+    - [rmi](#rmi)
+      - [rmi -f](#rmi--f)
     - [inspect](#inspect)
       - [inspect only IPAddress](#inspect-only-ipaddress)
     - [dump](#dump)
@@ -45,6 +51,34 @@ Otherwise it may not work.
 
 
 ### Commands
+
+#### default
+
+default command has **three** options.
+
+##### -c
+
+Lists only **containers**
+
+```bash
+dcli -c
+```
+
+##### -i
+
+Lists only **images**
+
+```bash
+dcli -i
+```
+
+##### -v
+
+Lists only **volumes**
+
+```bash
+dcli -v
+```
 
 ![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli.gif)
 
@@ -96,6 +130,7 @@ Removes a container that you already have.
 dcli rm
 ```
 
+
 ![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-rm-1.gif)
 
 ##### rm force
@@ -105,8 +140,27 @@ Removes a contaniner that is **running**
 ```bash
 dcli rm -f
 ```
+or 
+
+```bash
+dcli rm --force
+```
 
 ![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-rm-2.gif)
+
+
+#### rmi
+
+Removes a image that you already have.
+
+```bash
+dcli rmi
+```
+
+![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-rmi-1.gif)
+
+##### rmi -f
+
 
 
 #### inspect

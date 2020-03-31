@@ -8,7 +8,7 @@ const removeCommand = require('./src/commands/removeCommand');
 const removeImageCommand = require('./src/commands/removeImageCommand');
 const inspectCommand = require('./src/commands/inspectCommand');
 
-program.version('1.0.7').description('CLI for Docker');
+program.version('1.0.8').description('CLI for Docker');
 
 program
   .option('-c, --container', 'List Containers')
@@ -49,17 +49,16 @@ program
   .option('-f, --force', 'Removes image that has associated with the container')
   .action(obj => {
     const { force } = obj;
-    console.log(force);
     removeImageCommand(force);
   });
 
 program
   .command('inspect')
   .option('-j, --json', 'Creates json file of output of inspect log')
-  .option('-i, --ipaddress', 'Finds IPv4 address of container')
+  .option('-h, --host', 'Finds IPv4 address of container')
   .action(obj => {
-    const { json, ipaddress } = obj;
-    inspectCommand(ipaddress, json);
+    const { json, host } = obj;
+    inspectCommand(host, json);
   });
 
 program

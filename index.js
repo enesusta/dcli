@@ -50,7 +50,12 @@ program
   .option('-f, --force', 'Removes image that has associated with the container')
   .action(obj => {
     const { force } = obj;
-    removeImageCommand(force);
+    console.log(`force is ${force}`);
+    if (force) {
+      removeImageCommand(force);
+    } else {
+      removeImageCommand();
+    }
   });
 
 program

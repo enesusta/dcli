@@ -146,9 +146,6 @@ or
 dcli rm --force
 ```
 
-![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-rm-2.gif)
-
-
 #### rmi
 
 Removes a image that you already have.
@@ -181,10 +178,10 @@ dcli inspect
 This option uses `grep` via `unix pipes`.
 
 ```bash
-dcli inspect -i
+dcli inspect -h
 ```
 
-`-i` means IPAddres.
+`-h` means host.
 
 ![]( https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-inspect-2.gif)
 

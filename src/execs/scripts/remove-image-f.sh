@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker rmi -f $1
+docker image rm -f $1

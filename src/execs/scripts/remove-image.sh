@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker rmi $1
+echo "1 is $1"
+docker image rm $1

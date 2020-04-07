@@ -1,6 +1,6 @@
 const execSync = require('child_process').execSync;
 const lodash = require('lodash');
-const names = execSync(`docker images --format "{{.Repository}}"`).toString().trim();
+const names = execSync(`docker images --format "{{.Repository}} {{.ID}}"`).toString().trim();
 
 const message = 'Which image/s do you want to remove?';
 const type = 'name';

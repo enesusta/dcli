@@ -1,4 +1,4 @@
-const containerNames = require('../lists/inactiveContainerNamesList');
+const lodash = require('lodash');
 const execSync = require('child_process').execSync;
 const names = execSync(`docker container ls -f "status=exited" --format '{{.Names}}'`)
   .toString()
@@ -7,9 +7,26 @@ const names = execSync(`docker container ls -f "status=exited" --format '{{.Name
 const message = 'Which container/s do you want to start?';
 const type = 'type';
 
-module.exports = {
-  type: 'list',
+const prompt = {
+  type: 'autocomplete',
   message: message,
   name: type,
-  choices: names.split('\n'),
-};
+  source: source
+}
+
+function source(anwsers, input) {
+  input = input || '';
+  return new Promise((resolve, reject) => {
+    const containers = names.split('\n');
+    const view = [];
+
+    containers.forEach(e => {
+      if (e.includes(input)) view.push(e);
+      else return;
+    });
+
+    resolve(view);
+  }, lodash.random(30, 500));
+}
+
+module.exports = prompt;

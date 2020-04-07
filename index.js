@@ -7,6 +7,7 @@ const backupCommand = require('./src/commands/dumpCommand');
 const removeCommand = require('./src/commands/removeCommand');
 const removeImageCommand = require('./src/commands/removeImageCommand');
 const inspectCommand = require('./src/commands/inspectCommand');
+const pullCommand = require('./src/commands/pullCommand');
 
 program.version('1.0.8').description('CLI for Docker');
 
@@ -68,6 +69,12 @@ program
   .action(obj => {
     const { postgre, mysql } = obj;
     backupCommand(postgre, mysql);
+  });
+
+program
+  .command('pull')
+  .action(() => {
+    pullCommand();
   });
 
 program.parse(process.argv);

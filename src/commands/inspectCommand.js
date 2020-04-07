@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('../inquirer');
 
 const containerInspectExec = require('../execs/containerInspectExec');
 const inspectPrompt = require('../prompts/inspectPrompt');

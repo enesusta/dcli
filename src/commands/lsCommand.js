@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('../inquirer');
 
 const containerExec = require('../execs/containerViewExec');
 const imageExec = require('../execs/imageViewExec');

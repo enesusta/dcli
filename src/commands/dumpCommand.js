@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('../inquirer');
 const postgreDumpPrompt = require('../prompts/postgreDumpPrompt');
 const mysqlDumpPrompt = require('../prompts/mysqlDumpPrompt');
 const postgreDumpExec = require('../execs/postgreDumpExec');

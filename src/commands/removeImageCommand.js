@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('../inquirer');
 
 const removeImagePrompt = require('../prompts/removeImagePrompt');
 const containerRemoveImageExec = require('../execs/containerRemoveImageExec');

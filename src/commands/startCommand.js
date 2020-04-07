@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('../inquirer');
 const listActiveContainerNamesPrompt = require('../prompts/listInactiveContainerNamesPrompt');
 const containerStartExec = require('../execs/containerStartExec');
 const containerStartAllExec = require('../execs/containerStartAllExec');

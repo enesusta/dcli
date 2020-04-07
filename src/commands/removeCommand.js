@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require('../inquirer');
 
 const removePrompt = require('../prompts/removePrompt');
 const removeWithVolumePrompt = require('../prompts/removeWithVolumePrompt');

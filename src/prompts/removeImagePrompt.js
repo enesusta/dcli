@@ -1,12 +1,31 @@
 const execSync = require('child_process').execSync;
-const names = execSync(`docker images --format "{{.Repository}}"`).toString();
+const lodash = require('lodash');
+const names = execSync(`docker images --format "{{.Repository}}"`).toString().trim();
 
 const message = 'Which image/s do you want to remove?';
 const type = 'name';
 
-module.exports = {
-  type: 'list',
+const prompt = {
+  type: 'autocomplete',
   message: message,
   name: type,
-  choices: names.trim().split('\n'),
-};
+  source: removeSource
+}
+
+function removeSource(anwsers, input) {
+  input = input || '';
+  return new Promise((resolve, reject) => {
+    const containers = names.split('\n');
+    const view = [];
+
+    containers.forEach(e => {
+      if (e.includes(input)) view.push(e);
+      else return;
+    });
+
+    resolve(view);
+  }, lodash.random(30, 500));
+}
+
+
+module.exports = prompt;

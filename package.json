@@ -26,6 +26,8 @@
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^5.0.0",
-    "inquirer": "^7.1.0"
+    "inquirer": "^7.1.0",
+    "inquirer-autocomplete-prompt": "^1.0.2",
+    "lodash": "^4.17.15"
   }
 }

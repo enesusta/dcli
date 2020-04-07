@@ -183,7 +183,7 @@ dcli inspect -h
 
 `-h` means host.
 
-![]( https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-inspect-2.gif)
+![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-inspect-3.gif)
 
 #### dump
 
@@ -195,7 +195,7 @@ dcli inspect -h
 dcli dump --postgre
 ```
 
-![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-dump-postgre.gif)
+![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-dump-postgre-2.gif)
 
 - For **mysql** containers;
 
@@ -203,7 +203,7 @@ dcli dump --postgre
 dcli dump --mysql
 ```
 
-![]( https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-dump-mysql.gif)
+![](https://raw.githubusercontent.com/enesusta/assets-host-for-github-pages/assets/dcli/dcli-dump-mysql-2.gif)
 
 
 

@@ -1,13 +1,13 @@
 {
   "name": "@enesusta/dcli",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "CLI for Docker",
   "main": "index.js",
   "bin": {
     "dcli": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,8 @@
     "inquirer": "^7.1.0",
     "inquirer-autocomplete-prompt": "^1.0.2",
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
   }
 }

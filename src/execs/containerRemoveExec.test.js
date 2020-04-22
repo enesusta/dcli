@@ -1,14 +1,14 @@
 const { exec } = require("child_process");
 const path = require('path');
 
-const sh = path.resolve(__dirname, 'scripts/inspect.sh');
+const sh = path.resolve(__dirname, 'scripts/remove.sh');
 
-describe('inspect test', function () {
+describe('remove test', function () {
   describe('stdout test', function () {
     let captured_stdout;
 
     beforeAll(function (done) {
-      exec(`sh ${sh} postgres_container`, function (error, stdout, stderr) {
+      exec(`sh ${sh} test`, function (error, stdout, stderr) { // there is no container which is named test
         if (error) done(error); // Handle errors.
         captured_stdout = stdout;
         done();
@@ -16,7 +16,7 @@ describe('inspect test', function () {
     });
 
     it('It should contains ID', function () {
-      expect(captured_stdout).toMatch('Id');
+      expect(captured_stdout).toMatch('No such container');
     });
 
   });

@@ -9,14 +9,14 @@ describe('remove test', function () {
 
     beforeAll(function (done) {
       exec(`sh ${sh} test`, function (error, stdout, stderr) { // there is no container which is named test
-        if (error) done(error); // Handle errors.
-        captured_stdout = stdout;
+        if (error) captured_stdout = error.message;
+        else captured_stdout = stdout;
         done();
       });
     });
 
-    it('It should contains ID', function () {
-      expect(captured_stdout).toMatch('No such container');
+    it('It should return No such container message', function () {
+      expect(captured_stdout).toMatch('Command failed');
     });
 
   });

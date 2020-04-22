@@ -7,20 +7,20 @@ const shforce = path.resolve(__dirname, 'scripts/remove-image-f.sh');
 
 module.exports = function (container, isForce) {
 
-  const id = container.split(' ')[1];
+  const containerId = container.split(/\s/)[1];
 
   if (isForce) {
-    exec(`sh ${shforce} ${id}`, (err, stdout, stderr) => {
+    exec(`sh ${shforce} ${containerId}`, (err, stdout, stderr) => {
       if (!err) {
-        console.log('Image %s is successfully removed!', colors.cyan(container));
+        console.log('Image %s is successfully removed!', colors.cyan(containerId));
       } else {
         console.log(colors.red(err));
       }
     });
   } else {
-    exec(`sh ${sh} ${id}`, (err, stdout, stderr) => {
+    exec(`sh ${sh} ${containerId}`, (err, stdout, stderr) => {
       if (!err) {
-        console.log('Image %s is successfully removed with force!', colors.cyan(container));
+        console.log('Image %s is successfully removed with force!', colors.cyan(containerId));
       } else {
         console.log(colors.red(err));
       }

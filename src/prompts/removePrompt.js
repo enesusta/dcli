@@ -1,6 +1,6 @@
 const execSync = require('child_process').execSync;
 const lodash = require('lodash');
-const names = execSync(`docker ps -a --format '{{.Names}}'`).toString().trim();
+const names = execSync(`docker container ls -a --format "{{.Names}} {{.ID}}"`).toString().trim();
 
 
 const message = 'Which container/s do you want to remove?';

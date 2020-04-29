@@ -8,6 +8,7 @@ const removeCommand = require('./src/commands/removeCommand');
 const removeImageCommand = require('./src/commands/removeImageCommand');
 const inspectCommand = require('./src/commands/inspectCommand');
 const pullCommand = require('./src/commands/pullCommand');
+const execCommand = require('./src/commands/execCommand');
 
 program.version('1.0.8').description('CLI for Docker');
 
@@ -80,6 +81,12 @@ program
   .command('pull')
   .action(() => {
     pullCommand();
+  });
+
+program
+  .command('exec')
+  .action(() => {
+    console.log('burada');
   });
 
 program.parse(process.argv);

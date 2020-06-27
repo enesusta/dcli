@@ -1,19 +1,20 @@
 const inquirer = require('../inquirer');
-const listInactiveContainerNamesPrompt = require('../prompts/listActiveContainerNamesPrompt');
+const stopPrompt = require('../prompts/stopPrompt');
 const containerStopExec = require('../execs/containerStopExec');
 const containerStopAllExec = require('../execs/containerStopAllExec');
 
 function stopCommand(isAll) {
-    if (isAll) {
-        containerStopAllExec();
-    } else {
-        inquirer
-            .prompt([listInactiveContainerNamesPrompt])
-            .then(res => {
-                const { type } = res;
-                containerStopExec(type);
-            });
-    }
+  if (isAll) {
+    containerStopAllExec();
+  } else {
+    inquirer
+      .prompt([stopPrompt])
+      .then(res => {
+        const { containerName } = res;
+        const containerInformation = containerName.split(/\s/);
+        containerStopExec(containerInformation[0], containerInformation[1]);
+      });
+  }
 }
 
 module.exports = stopCommand;

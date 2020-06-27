@@ -1,7 +1,7 @@
 const { exec } = require("child_process");
 const path = require('path');
 
-const sh = path.resolve(__dirname, 'scripts/remove.sh');
+const sh = path.resolve(__dirname, 'src/scripts/remove.sh');
 
 describe('remove test', function () {
   describe('stdout test', function () {

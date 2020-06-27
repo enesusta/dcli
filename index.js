@@ -26,6 +26,8 @@ program
   .option('-a, --all', 'Stops Containers')
   .action(obj => {
     const { all } = obj;
+    console.log('burada');
+    console.log(all);
     stopCommand(all);
   });
 

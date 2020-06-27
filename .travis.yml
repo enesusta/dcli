@@ -1,17 +1,34 @@
+sudo: required
 language: node_js
+
 node_js:
-    - 12
+  - 12
+
 os:
-    - linux
+  - linux
+
+cache:
+  directories:
+    - node_modules
 
 services:
-    - docker
+  - docker
+
+branches:
+  except:
+    - develop
+    - /^feature/\d+\.\d+$/
+  only:
+    - master
 
 before_install:
-    - docker run -d --name postgres_container -p 5432:5432 postgres
+  - docker run -d --name postgres_container -p 5432:5432 postgres
+  - npm update
 
-install: true
+install:
+  - npm install
 
 script:
-    - npm install
-    - npm run test
+  - yarn coveralls
+
+

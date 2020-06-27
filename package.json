@@ -7,7 +7,9 @@
     "dcli": "index.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cov": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "jest": "^25.3.0"
   }
 }

@@ -5,13 +5,25 @@ const path = require('path');
 
 const sh = path.resolve(__dirname, 'scripts/stop.sh');
 
-module.exports = function (container) {
 
-  exec(`sh ${sh} ${container}`, (err, stdout, stderr) => {
-    if (!err) {
-      console.log('Container %s is successfully stopped!', colors.cyan(container));
-    } else {
-      console.log(colors.red(err));
-    }
+module.exports = (containerId, containerName) => {
+  return new Promise((resolve, reject) => {
+    exec(`sh ${sh} ${containerId}`, (err, stdout, stderr) => {
+      if (!err) {
+
+        console.log('The container with the ID: %s || and the name %s has been successfully stopped!', colors.cyan(containerId), colors.bgYellow(containerName));
+
+        const output = util.format('The container ' +
+          'with the ID: %s || and the name %s ' +
+          'has been successfully stopped', containerId, containerName);
+
+        resolve(output);
+
+      } else {
+        console.log(colors.red(err));
+        reject(err);
+      }
+    });
   });
+
 };

@@ -9,6 +9,7 @@ const removeImageCommand = require('./src/commands/removeImageCommand');
 const inspectCommand = require('./src/commands/inspectCommand');
 const pullCommand = require('./src/commands/pullCommand');
 const execCommand = require('./src/commands/execCommand');
+const lessCommand = require('./src/commands/lessCommand');
 
 program.version('1.0.8').description('CLI for Docker');
 
@@ -19,6 +20,12 @@ program
   .action(obj => {
     const { container, image, volume } = obj;
     lsCommand(container, image, volume);
+  });
+
+program
+  .command('cin')
+  .action(() => {
+    lessCommand();
   });
 
 program

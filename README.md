@@ -4,9 +4,11 @@
 <div align="center">
 
 [![Build Status](https://travis-ci.com/enesusta/dcli.svg?branch=master)](https://travis-ci.com/enesusta/dcli)
-![npm](https://img.shields.io/npm/v/@enesusta/dcli?color=green)
+[![Coverage Status](https://coveralls.io/repos/github/enesusta/dcli/badge.svg?branch=master)](https://coveralls.io/github/enesusta/dcli?branch=master)
+[![CodeFactor](https://www.codefactor.io/repository/github/enesusta/dcli/badge)](https://www.codefactor.io/repository/github/enesusta/dcli)
+![npm](https://img.shields.io/npm/v/@enesusta/dcli?color=blue)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![install size](https://packagephobia.now.sh/badge?p=@enesusta/dcli)](https://packagephobia.now.sh/result?p=@enesusta/dcli)
-[![HitCount](http://hits.dwyl.com/enesusta/dcli.svg)](http://hits.dwyl.com/enesusta/dcli)
 
 **dcli** is cli for Docker.
 
@@ -21,9 +23,9 @@
   - [Installation](#installation)
   - [Commands](#commands)
     - [default](#default)
-      - [-c](#c)
-      - [-i](#i)
-      - [-v](#v)
+      - [-c](#-c)
+      - [-i](#-i)
+      - [-v](#-v)
     - [start](#start)
       - [start all](#start-all)
     - [stop](#stop)
@@ -55,6 +57,12 @@ Otherwise it may not work.
 #### default
 
 default command has **three** options.
+
+| Command | Description |
+| -- | -- |
+| **-c** | List only containers and prints information of each container |
+| **-ci** | Prints only container IDs and names
+
 
 ##### -c
 

@@ -1,23 +1,27 @@
-const { exec } = require("child_process");
-const path = require('path');
+const { exec } = require('child_process');
+const containerStopExec = require('../../src/execs/containerStopExec');
 
-const sh = path.resolve(__dirname, 'src/scripts/inspect.sh');
+describe('containerStopExec test', () => {
+  let containerId;
 
-describe('inspect test', function () {
-  describe('stdout test', function () {
-    let captured_stdout;
+  beforeAll(done => {
+    exec(`docker run -d --name redis-test redis`, (err, stdout) => {
+      if (err) done(err);
+      containerId = stdout;
+      done();
+    });
+  });
 
-    beforeAll(function (done) {
-      exec(`sh ${sh} postgres_container`, function (error, stdout, stderr) {
-        if (error) done(error); // Handle errors.
-        captured_stdout = stdout;
-        done();
-      });
+  test('dcli must stop the container which related to given by parameters'
+    , async done => {
+      containerStopExec(containerId, 'redis-test')
+        .then(res => {
+          expect(res).toMatch(`The container with the ID: ${containerId}`);
+          done();
+        });
     });
 
-    it('It should contains ID', function () {
-      expect(captured_stdout).toMatch('Id');
-    });
-
+  afterAll(() => {
+    exec(`docker rm -f ${containerId}`);
   });
 });

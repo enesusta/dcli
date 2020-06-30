@@ -31,4 +31,10 @@ install:
 script:
   - yarn coveralls
 
+before_deploy:
+  - npm --no-git-tag-version version patch
 
+deploy:
+  provider: npm
+  email: "enesusta@protonmail.com"
+  api_key: $NPM_API_KEY

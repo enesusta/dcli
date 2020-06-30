@@ -28,7 +28,6 @@ script:
 
 before_deploy:
   - npm --no-git-tag-version version patch
-  - npm run build
 
 
 deploy:
@@ -36,3 +35,5 @@ deploy:
   provider: npm
   email: "enesusta@protonmail.com"
   api_key: $NPM_API_KEY
+  skip_cleanup: true
+  

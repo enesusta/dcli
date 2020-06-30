@@ -19,7 +19,6 @@ branches:
 
 before_install:
   - docker run -d --name postgres_container -p 5432:5432 postgres
-  - npm update
 
 install:
   - npm install
@@ -29,8 +28,11 @@ script:
 
 before_deploy:
   - npm --no-git-tag-version version patch
+  - npm run build
+
 
 deploy:
+  edge: true
   provider: npm
   email: "enesusta@protonmail.com"
   api_key: $NPM_API_KEY

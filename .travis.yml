@@ -36,4 +36,4 @@ deploy:
   email: "enesusta@protonmail.com"
   api_key: $NPM_API_KEY
   skip_cleanup: true
-  
+

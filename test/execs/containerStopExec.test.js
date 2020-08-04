@@ -1,11 +1,11 @@
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 const containerStopExec = require('../../src/execs/containerStopExec');
 
 describe('containerStopExec test', () => {
   let containerId;
 
   beforeAll(done => {
-    exec(`docker run -d --name redis-test redis`, (err, stdout) => {
+    execSync(`docker run -d --name redis-test redis`, (err, stdout) => {
       if (err) done(err);
       containerId = stdout;
       done();

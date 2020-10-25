@@ -3,8 +3,6 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.com/enesusta/dcli.svg?branch=master)](https://travis-ci.com/enesusta/dcli)
-[![Coverage Status](https://coveralls.io/repos/github/enesusta/dcli/badge.svg?branch=master)](https://coveralls.io/github/enesusta/dcli?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/enesusta/dcli/badge)](https://www.codefactor.io/repository/github/enesusta/dcli)
 ![npm](https://img.shields.io/npm/v/@enesusta/dcli?color=blue)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)

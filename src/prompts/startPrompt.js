@@ -4,7 +4,7 @@ const names = execSync(`docker container ls -f "status=exited" -f "status=paused
   .toString()
   .trim();
 
-const message = 'Which container/s do you want to stop';
+const message = 'Which container/s do you want to start?';
 const type = 'type';
 
 const startSource = (anwsers, input) => {

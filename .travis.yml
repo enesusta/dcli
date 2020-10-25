@@ -17,14 +17,14 @@ branches:
   only:
     - master
 
-before_install:
-  - docker run -d --name postgres_container -p 5432:5432 postgres
+#before_install:
+ # - docker run -d --name postgres_container -p 5432:5432 postgres
 
 install:
   - npm install
 
-script:
-  - yarn coveralls
+#script:
+#  - yarn coveralls
 
 before_deploy:
   - npm --no-git-tag-version version patch

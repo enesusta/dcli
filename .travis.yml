@@ -13,7 +13,7 @@ services:
 branches:
   except:
     - develop
-    - /^feature/\d+\.\d+$/
+    - /^feature/DCLI-\d+\.\d+$/
   only:
     - master
 
